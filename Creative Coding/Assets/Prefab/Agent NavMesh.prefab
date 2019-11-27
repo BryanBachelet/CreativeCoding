@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 4321546615301608346}
   - component: {fileID: 1903518791}
   - component: {fileID: 1903518792}
-  - component: {fileID: 1513086254}
+  - component: {fileID: 6652814450143123644}
+  - component: {fileID: 469411745}
   m_Layer: 9
   m_Name: Agent NavMesh
   m_TagString: Untagged
@@ -130,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d13ba17a48babf4882f01b45979d0c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentCaste: 0
+  CurrentCaste: 3
 --- !u!114 &1903518792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,17 +144,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7406036605f166043897b404bbe8ade5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reproduction: 2
   reproductionTime: 10
   dectectionZone: 10
   inReproduction: 0
   parternaireReproduction: {fileID: 0}
+  asker: 0
+  demandChanceReproductionSameCast: 45
+  demandChanceReproductionSuperioCast: 45
+  demandChanceReproductionInferiorCast: 10
   chanceReproductionSameCast: 45
   chanceReproductionSuperioCast: 45
   chanceReproductionInferiorCast: 5
   durationBetweenAsk: 1
   agentAround: []
   tryAgent: 0
---- !u!54 &1513086254
+--- !u!114 &6652814450143123644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4321546615301608341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98521bf777b71b2439f93035e33a132d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partenaire: {fileID: 0}
+  agentSpawn: {fileID: 4321546615301608341}
+  parentSpawner: {fileID: 0}
+--- !u!54 &469411745
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
