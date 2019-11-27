@@ -7,38 +7,63 @@ public class RessourceSystem : MonoBehaviour
 {
     public float currentRadius = 1f;
     public int currentPopul = 0;
-    public int religionPopul = 2;
-    public int protectionPopul = 2;
-    public int marchandPopul = 2;
-    public int cultivateurpopul = 4;
+    public int religionPopul;
+    public int protectionPopul;
+    public int marchandPopul;
+    public int cultivateurpopul;
     int maxReligion = 0;
     int maxProtection = 0;
     int maxMarchand = 0;
     int maxCultivateur = 0;
 
-    public Text cultiText;
-    public Text marchandText;
-    public Text protecteurText;
-    public Text religionText;
-    public Text totalPopul;
+    SphereCollider mySC;
     // Start is called before the first frame update
     void Start()
     {
-        
+        mySC = gameObject.AddComponent<SphereCollider>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        GetPopulRepartition();
         currentRadius = currentPopul / 10;
         currentPopul = religionPopul + protectionPopul + marchandPopul + cultivateurpopul;
-        cultiText.text = ("" + cultivateurpopul + " /" + (cultivateurpopul * 100 / currentPopul) + "%");
-        marchandText.text = (""+ marchandPopul + " /" + (marchandPopul * 100 / currentPopul) + "%");
-        protecteurText.text = (""+ protectionPopul + " /" + (protectionPopul * 100 / currentPopul) + "%");
-        religionText.text = ("" + religionPopul + " /" + (religionPopul * 100 / currentPopul) + "%");
-        totalPopul.text = ("" + currentPopul);
+        mySC.radius = currentRadius;
     }
 
+    void GetPopulRepartition()
+    {
+        religionPopul = 0;
+        cultivateurpopul = 0;
+        protectionPopul = 0;
+        marchandPopul = 0;
+
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            if (transform.GetChild(i).GetComponent<AgentCaste>())
+            {
+                if(transform.GetChild(i).GetComponent<AgentCaste>().CurrentCaste == AgentCaste.Caste.Farmer)
+                {
+                    cultivateurpopul++;
+                }
+                else if(transform.GetChild(i).GetComponent<AgentCaste>().CurrentCaste == AgentCaste.Caste.Seller)
+                {
+                    marchandPopul++;
+                }
+                else if (transform.GetChild(i).GetComponent<AgentCaste>().CurrentCaste == AgentCaste.Caste.Protector)
+                {
+                    protectionPopul++;
+                }
+                else if (transform.GetChild(i).GetComponent<AgentCaste>().CurrentCaste == AgentCaste.Caste.Priest)
+                {
+                    religionPopul++;
+                }
+
+            }
+
+        }
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = new Color(0, 0, 1, 0.4f);
