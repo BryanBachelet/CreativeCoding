@@ -45,10 +45,12 @@ public class AgentReproduction : MonoBehaviour
         {
             inReproduction = false;
             asker = false;
+            tryAgent = 0;
             if (_workTime > workTime)
             {
                 _workTime = 0;
                 reproduction = StateReproduction.SearchReproduction;
+                CheckAgentAround();
             }
             else
             {
@@ -113,11 +115,11 @@ public class AgentReproduction : MonoBehaviour
 
                     }
                 }
-                else
-                {
-                    tryAgent++;
-                    Debug.Log(tryAgent);
-                }
+            }
+            else
+            {
+                tryAgent++;
+                Debug.Log(tryAgent);
             }
         }
 

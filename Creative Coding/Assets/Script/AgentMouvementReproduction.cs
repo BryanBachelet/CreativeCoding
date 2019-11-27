@@ -31,13 +31,15 @@ public class AgentMouvementReproduction : MonoBehaviour
     {
         if (agentReproduction.reproduction == AgentReproduction.StateReproduction.InReproduction)
         {
+            meshAgent.isStopped = false;
             partenaire = agentReproduction.parternaireReproduction.transform;
             partenaireCaste = partenaire.GetComponent<AgentCaste>();
             float distance = Vector3.Distance(transform.position, partenaire.position);
             meshAgent.SetDestination(partenaire.position);
+            Debug.Log(gameObject.name + " + " +meshAgent.destination);
             if (distance < 3f)
             {
-                meshAgent.Stop();
+                meshAgent.isStopped = true;
                 if (agentReproduction.asker)
                 {
                     InstantiateAgent();
