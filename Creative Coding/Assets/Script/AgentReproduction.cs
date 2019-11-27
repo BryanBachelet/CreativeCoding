@@ -43,6 +43,8 @@ public class AgentReproduction : MonoBehaviour
     {
         if (reproduction == StateReproduction.Work)
         {
+            inReproduction = false;
+            asker = false;
             if (_workTime > workTime)
             {
                 _workTime = 0;
@@ -50,6 +52,7 @@ public class AgentReproduction : MonoBehaviour
             }
             else
             {
+
                 _workTime += Time.deltaTime;
             }
 

@@ -23,10 +23,10 @@ public class AgentMouvementReproduction : MonoBehaviour
     {
         managerAgent = FindObjectOfType<ManagerAgent>();
         agentSpawn = managerAgent.agentSpawn;
+        parentSpawner = managerAgent.gameObject;
         meshAgent = GetComponent<NavMeshAgent>();
         agentReproduction = GetComponent<AgentReproduction>();
         agentCasteCurrent = GetComponent<AgentCaste>();
-        partenaireCaste = partenaire.GetComponent<AgentCaste>();
     }
 
     // Update is called once per frame
@@ -35,6 +35,7 @@ public class AgentMouvementReproduction : MonoBehaviour
         if (agentReproduction.reproduction == AgentReproduction.StateReproduction.InReproduction)
         {
             partenaire = agentReproduction.parternaireReproduction.transform;
+            partenaireCaste = partenaire.GetComponent<AgentCaste>();
             float distance = Vector3.Distance(transform.position, partenaire.position);
             meshAgent.SetDestination(partenaire.position);
             if (distance < 3f)
@@ -43,8 +44,8 @@ public class AgentMouvementReproduction : MonoBehaviour
                 if (agentReproduction.asker)
                 {
                     InstantiateAgent();
-                    agentReproduction.reproduction = AgentReproduction.StateReproduction.Work;
                 }
+                    agentReproduction.reproduction = AgentReproduction.StateReproduction.Work;
             }
         }
     }
@@ -52,10 +53,10 @@ public class AgentMouvementReproduction : MonoBehaviour
     public void InstantiateAgent()
     {
 
-        GameObject newAgent = Instantiate(agentSpawn, transform.position, Quaternion.identity, parentSpawner.transform);
+        GameObject newAgent = Instantiate(agentSpawn, transform.position + transform.right, Quaternion.identity, parentSpawner.transform);
         AgentCaste agentCaste = newAgent.GetComponent<AgentCaste>();
         int chance = Random.Range(0, 100);
-        if(agentCasteCurrent.CurrentCaste == partenaireCaste.CurrentCaste)
+        if (agentCasteCurrent.CurrentCaste == partenaireCaste.CurrentCaste)
         {
             agentCaste.CurrentCaste = agentCasteCurrent.CurrentCaste;
         }
@@ -71,7 +72,7 @@ public class AgentMouvementReproduction : MonoBehaviour
             }
 
         }
-        if(agentCasteCurrent.CurrentCaste < partenaireCaste.CurrentCaste)
+        if (agentCasteCurrent.CurrentCaste < partenaireCaste.CurrentCaste)
         {
             if (chance < changeToGiveInferiorClass)
             {
@@ -82,7 +83,7 @@ public class AgentMouvementReproduction : MonoBehaviour
                 agentCaste.CurrentCaste = partenaireCaste.CurrentCaste;
             }
         }
-        
+
         AgentMouvementReproduction reproductionAgent = newAgent.GetComponent<AgentMouvementReproduction>();
         reproductionAgent.agentSpawn = managerAgent.agentSpawn;
         reproductionAgent.parentSpawner = parentSpawner;

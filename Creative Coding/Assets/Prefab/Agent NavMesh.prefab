@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reproduction: 2
+  workTime: 5
   reproductionTime: 10
   dectectionZone: 10
   inReproduction: 0
@@ -171,9 +172,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98521bf777b71b2439f93035e33a132d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partenaire: {fileID: 0}
-  agentSpawn: {fileID: 4321546615301608341}
-  parentSpawner: {fileID: 0}
+  agentCasteCurrent: {fileID: 0}
+  partenaireCaste: {fileID: 0}
+  changeToGiveSuperiorClass: 50
+  changeToGiveInferiorClass: 50
 --- !u!54 &469411745
 Rigidbody:
   m_ObjectHideFlags: 0
