@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4660367961562257505
+--- !u!1 &5087171022085724869
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,44 +8,44 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4660367961562257519}
-  - component: {fileID: 4660367961562257518}
-  m_Layer: 10
-  m_Name: ManagerRessources
+  - component: {fileID: 5087171022085724867}
+  - component: {fileID: 5087171022085724868}
+  m_Layer: 0
+  m_Name: ManagerInput
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4660367961562257519
+--- !u!4 &5087171022085724867
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4660367961562257505}
+  m_GameObject: {fileID: 5087171022085724869}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 203.85094, y: 681.2722, z: -114.81842}
+  m_LocalPosition: {x: 0.39117002, y: 1.085557, z: 0.6858891}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4660367961562257518
+--- !u!114 &5087171022085724868
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4660367961562257505}
+  m_GameObject: {fileID: 5087171022085724869}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f9a139e9b46714499816673d8d2a355, type: 3}
+  m_Script: {fileID: 11500000, guid: 42692e35ca296054fbf8cead964674b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentRadius: 1
-  currentPopul: 0
-  religionPopul: 0
-  protectionPopul: 0
-  marchandPopul: 0
-  cultivateurpopul: 0
+  currentCity: {fileID: 0}
+  cultiText: {fileID: 0}
+  marchandText: {fileID: 0}
+  protecteurText: {fileID: 0}
+  religionText: {fileID: 0}
+  totalPopul: {fileID: 0}

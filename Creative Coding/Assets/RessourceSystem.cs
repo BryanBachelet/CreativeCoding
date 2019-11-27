@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class RessourceSystem : MonoBehaviour
 {
-    public float currentRadius = 1f;
+    public float currentRadius = 10f;
     public int currentPopul = 0;
     public int religionPopul;
     public int protectionPopul;
@@ -27,7 +27,7 @@ public class RessourceSystem : MonoBehaviour
     void Update()
     {
         GetPopulRepartition();
-        currentRadius = currentPopul / 10;
+        currentRadius = currentPopul;
         currentPopul = religionPopul + protectionPopul + marchandPopul + cultivateurpopul;
         mySC.radius = currentRadius;
     }
@@ -69,5 +69,10 @@ public class RessourceSystem : MonoBehaviour
         Gizmos.color = new Color(0, 0, 1, 0.4f);
         Gizmos.DrawSphere(transform.position, currentRadius);
         Gizmos.DrawWireSphere(transform.position, currentRadius);
+    }
+
+    public void ChooseAName()
+    {
+
     }
 }
