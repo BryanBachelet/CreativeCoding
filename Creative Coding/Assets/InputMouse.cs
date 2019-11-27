@@ -57,6 +57,14 @@ public class InputMouse : MonoBehaviour
                 zoom = false;
             }
         }
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            Time.timeScale = 10;
+        }
+        else if (Input.GetKeyDown(KeyCode.O))
+        {
+            Time.timeScale = 1;
+        }
     }
 
     

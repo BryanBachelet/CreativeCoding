@@ -19,34 +19,77 @@ public class AgentMouvementReproduction : MonoBehaviour
 
     public ManagerAgent managerAgent;
 
+    public Vector3 posToMove;
+
+    public List<Vector3> pointTotravel = new List<Vector3>();
+    public bool isTraveling = false;
+    int currentPoint = 0;
+    LineRenderer myLR;
     void Start()
     {
+        Vector2 rnd = Random.insideUnitCircle * gameObject.transform.parent.GetComponent<RessourceSystem>().currentRadius;
+        posToMove = gameObject.transform.parent.position + new Vector3(rnd.x, 0, rnd.y);
+
         meshAgent = GetComponent<NavMeshAgent>();
         agentReproduction = GetComponent<AgentReproduction>();
         agentCasteCurrent = GetComponent<AgentCaste>();
+        myLR = gameObject.GetComponent<LineRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (agentReproduction.reproduction == AgentReproduction.StateReproduction.InReproduction)
+        if(!isTraveling)
         {
-            meshAgent.isStopped = false;
-            partenaire = agentReproduction.parternaireReproduction.transform;
-            partenaireCaste = partenaire.GetComponent<AgentCaste>();
-            float distance = Vector3.Distance(transform.position, partenaire.position);
-            meshAgent.SetDestination(partenaire.position);
-            Debug.Log(gameObject.name + " + " +meshAgent.destination);
-            if (distance < 3f)
+            if (agentReproduction.reproduction == AgentReproduction.StateReproduction.InReproduction)
             {
-                meshAgent.isStopped = true;
-                if (agentReproduction.asker)
+                meshAgent.isStopped = false;
+                partenaire = agentReproduction.parternaireReproduction.transform;
+                partenaireCaste = partenaire.GetComponent<AgentCaste>();
+                float distance = Vector3.Distance(transform.position, partenaire.position);
+                meshAgent.SetDestination(partenaire.position);
+                Debug.Log(gameObject.name + " + " + meshAgent.destination);
+                if (distance < 3f)
                 {
-                    InstantiateAgent();
-                }
+                    meshAgent.isStopped = true;
+                    if (agentReproduction.asker)
+                    {
+                        InstantiateAgent();
+                    }
                     agentReproduction.reproduction = AgentReproduction.StateReproduction.Work;
+                }
+            }
+            if (agentReproduction.reproduction == AgentReproduction.StateReproduction.Work)
+            {
+                if (meshAgent.remainingDistance < 1)
+                {
+                    Vector2 rnd = Random.insideUnitCircle * gameObject.transform.parent.GetComponent<RessourceSystem>().currentRadius;
+                    posToMove = gameObject.transform.parent.position + new Vector3(rnd.x, 0, rnd.y);
+                }
+                //gameObject.transform.parent.GetComponent<RessourceSystem>().currentRadius
+                meshAgent.SetDestination(posToMove);
             }
         }
+        else
+        {
+
+            myLR.enabled = true;
+            myLR.SetVertexCount(pointTotravel.Count);
+            transform.position = Vector3.MoveTowards(transform.position, pointTotravel[currentPoint], 10 * Time.deltaTime);
+            if (Vector3.Distance(transform.position, pointTotravel[currentPoint]) <= 2 && currentPoint < pointTotravel.Count)
+            {
+                currentPoint++;
+                myLR.SetPosition(currentPoint, pointTotravel[currentPoint]);
+
+            }
+            else if (Vector3.Distance(transform.position, pointTotravel[currentPoint]) <= 2 && currentPoint == pointTotravel.Count)
+            {
+                transform.parent = transform.parent.GetComponent<ManagerAgent>().cityToTravel.transform;
+                isTraveling = false;
+
+            }
+        }
+
     }
 
     public void InstantiateAgent()

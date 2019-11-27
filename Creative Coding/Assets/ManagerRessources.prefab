@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4660367961562257519}
   - component: {fileID: 4660367961562257518}
+  - component: {fileID: 1391728827}
   m_Layer: 10
   m_Name: ManagerRessources
   m_TagString: Untagged
@@ -43,9 +44,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f9a139e9b46714499816673d8d2a355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentRadius: 1
+  currentRadius: 10
   currentPopul: 0
   religionPopul: 0
   protectionPopul: 0
   marchandPopul: 0
   cultivateurpopul: 0
+--- !u!114 &1391728827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4660367961562257505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aad2f288b3a63c458b15d345d525748, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CultiSpawn: {fileID: 4321546615301608341, guid: a53233170b4dd71418672617dd844e76,
+    type: 3}
+  MarchaSpawn: {fileID: 4321546615301608341, guid: bca1baeeb32510345928c39dfebf6dea,
+    type: 3}
+  ReligeSpawn: {fileID: 4321546615301608341, guid: 3ca5a1dffa35a2442a74f5da7fb9380a,
+    type: 3}
+  ProtecSpawn: {fileID: 4321546615301608341, guid: ed386b7ca74c29d4fb0e8c02e67b7c60,
+    type: 3}
+  ExploSpawn: {fileID: 4321546615301608341, guid: b459f509ec3d2cd4094b37cb183bc0e1,
+    type: 3}
+  cultivateurPercentStart: 2
+  marchandPercentStart: 2
+  protectionPercentStart: 2
+  religieuxPercentStart: 2

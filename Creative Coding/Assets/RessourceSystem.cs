@@ -27,7 +27,7 @@ public class RessourceSystem : MonoBehaviour
     void Update()
     {
         GetPopulRepartition();
-        currentRadius = currentPopul;
+        currentRadius = currentPopul / 2;
         currentPopul = religionPopul + protectionPopul + marchandPopul + cultivateurpopul;
         mySC.radius = currentRadius;
     }
