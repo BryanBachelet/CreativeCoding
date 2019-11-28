@@ -14,7 +14,7 @@ public class AgentReproduction : MonoBehaviour
 
     public float reproductionTime = 10;
     private float _reproductionTime;
-    public float dectectionZone = 10;
+    public float dectectionZone = 100;
 
     public bool inReproduction = false;
     public GameObject parternaireReproduction;

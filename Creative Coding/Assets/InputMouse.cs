@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class InputMouse : MonoBehaviour
 {
+    public float tempsMoveZoom = 2f;
     public RessourceSystem currentCity;
     float heighScreen;
 
@@ -14,6 +15,8 @@ public class InputMouse : MonoBehaviour
     public Text protecteurText;
     public Text religionText;
     public Text totalPopul;
+
+    public bool zoom = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,9 +40,30 @@ public class InputMouse : MonoBehaviour
                 {
                     Debug.DrawRay(Camera.main.transform.position, Camera.main.ScreenPointToRay(Input.mousePosition).direction * hit.distance, Color.red);
                     currentCity = hit.collider.GetComponent<RessourceSystem>();
+                    Debug.Log(Vector3.Distance(Camera.main.transform.position, currentCity.transform.position));
+                    zoom = true;
                 }
             }
             
+        }
+        if(zoom)
+        {
+            if (Vector3.Distance(Camera.main.transform.position, currentCity.transform.position) > currentCity.currentRadius*3)
+            {
+                Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position, currentCity.transform.position, tempsMoveZoom);
+            }
+            else
+            {
+                zoom = false;
+            }
+        }
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            Time.timeScale = 10;
+        }
+        else if (Input.GetKeyDown(KeyCode.O))
+        {
+            Time.timeScale = 1;
         }
     }
 
