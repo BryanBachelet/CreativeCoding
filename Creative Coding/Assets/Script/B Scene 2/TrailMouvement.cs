@@ -126,13 +126,13 @@ public class TrailMouvement : MonoBehaviour
                         startPos = transform.position;
                         rotatePos = transform.eulerAngles;
                     }
-                    if (rotating && rotate < (190 + 360))
+                    if (rotating && rotate < (180 + 360))
                     {
                         rotate += 1000 * Time.deltaTime;
                         transform.RotateAround(startPos + direction.normalized * 5, transform.up, 1000 * Time.deltaTime);
                         transform.eulerAngles = rotatePos;
                     }
-                    if (rotate >= (190 + 360))
+                    if (rotate >= (180 + 360))
                     {
                         transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
                     }
@@ -201,13 +201,13 @@ public class TrailMouvement : MonoBehaviour
                         startPos = transform.position;
                         rotatePos = transform.eulerAngles;
                     }
-                    if (rotating && rotate < (190 + 360))
+                    if (rotating && rotate < (180 + 360))
                     {
                         rotate += 1000 * Time.deltaTime;
                         transform.RotateAround(startPos + direction.normalized * 5, transform.up, 1000 * Time.deltaTime);
                         transform.eulerAngles = rotatePos;
                     }
-                    if (rotate >= (190 + 360) && j == 0)
+                    if (rotate >= (180 + 360) && j == 0)
                     {
                         rotate = 0;
                         

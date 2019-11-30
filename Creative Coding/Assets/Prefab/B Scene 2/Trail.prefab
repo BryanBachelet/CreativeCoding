@@ -57,6 +57,7 @@ MonoBehaviour:
   rotate: 0
   checkdist: 0
   first: {fileID: 2100000, guid: d976c36b565dbe14997e539c2ff597a8, type: 2}
+  j: 0
 --- !u!96 &6092470911752484838
 TrailRenderer:
   serializedVersion: 2
@@ -149,7 +150,7 @@ TrailRenderer:
     textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
-  m_MinVertexDistance: 0.1
+  m_MinVertexDistance: 0.01
   m_Autodestruct: 1
   m_Emitting: 1
 --- !u!65 &65202370031205378
