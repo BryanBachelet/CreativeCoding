@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6442172a14bc65b4cbc0ad76a2a3d7c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trail: {fileID: 6092470911752484837, guid: 869ce7c457e3bb64aa47943053a00026, type: 3}
+  trail: {fileID: 6092470911752484837, guid: ad5114bb68fca994585ffbdf5f8f32fa, type: 3}
   trailMvt: {fileID: 0}
   currentTrail: {fileID: 0}
 --- !u!4 &546638418

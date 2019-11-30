@@ -114,7 +114,7 @@ public class TrailMouvement : MonoBehaviour
                 if (Vector3.Distance(transform.position, destination) > 0.5f)
                 {
                     float dis = Vector3.Distance(transform.position, destination);
-                    Debug.Log(dis / distance);
+               
                     checkdist = dis / distance;
                     if (!rotating)
                     {
@@ -189,31 +189,21 @@ public class TrailMouvement : MonoBehaviour
                 if (Vector3.Distance(transform.position, destination) > 0.5f)
                 {
                     float dis = Vector3.Distance(transform.position, destination);
-                    Debug.Log(dis / distance);
+                 
                     checkdist = dis / distance;
                     if (!rotating)
                     {
                         transform.position = Vector3.MoveTowards(transform.position, middleDestination, speed * Time.deltaTime);
                     }
-                    if (dis / distance <= 0.51f && !rotating)
+                    if (dis / distance <= 0.51f && rotate <= (180 + 360))
                     {
-                        rotating = true;
-                        startPos = transform.position;
-                        rotatePos = transform.eulerAngles;
-                    }
-                    if (rotating && rotate < (180 + 360))
-                    {
-                        rotate += 1000 * Time.deltaTime;
-                        transform.RotateAround(startPos + direction.normalized * 5, transform.up, 1000 * Time.deltaTime);
-                        transform.eulerAngles = rotatePos;
+                        RotationTrail(1000, direction, 5);
                     }
                     if (rotate >= (180 + 360) && j == 0)
                     {
                         rotate = 0;
-                        
-                        startPos = transform.position;
-                        rotatePos = transform.eulerAngles;
-                        j = 1;
+                        GetPositionRotation();
+                        j++;
                     }
                     if (rotate >= (180 + 360) && j == 1)
                     {
@@ -233,8 +223,29 @@ public class TrailMouvement : MonoBehaviour
                 }
             }
         }
-
+       
     }
 
 
+    public bool GetPositionRotation()
+    {
+        startPos = transform.position;
+        rotatePos = transform.eulerAngles;
+        return rotating = true ;
+    }
+
+
+    public void RotationTrail(float speed, Vector3 direction, float distance)
+    {
+        if (!rotating)
+        {
+            GetPositionRotation();
+        }
+       
+            rotate += speed * Time.deltaTime;
+            transform.RotateAround(startPos + direction.normalized * distance, transform.up, speed * Time.deltaTime);
+            transform.eulerAngles = rotatePos;
+
+        
+    }
 }
