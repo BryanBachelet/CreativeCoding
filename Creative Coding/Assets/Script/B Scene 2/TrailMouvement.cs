@@ -215,7 +215,7 @@ public class TrailMouvement : MonoBehaviour
                         rotatePos = transform.eulerAngles;
                         j = 1;
                     }
-                    if (rotate >= (190 + 360) && j == 1)
+                    if (rotate >= (180 + 360) && j == 1)
                     {
                         transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
                     }
