@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3993680564704944592}
   - component: {fileID: 114615189834976480}
   m_Layer: 0
-  m_Name: Trail Simple 1
+  m_Name: Trail Diviseur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169,5 +169,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 200
   distanceDeplacement: 20
-  divisionChange: 10
+  divisionChange: 15
   trailinstan: {fileID: 6092470911752484837}

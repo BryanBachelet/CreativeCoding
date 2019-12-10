@@ -210,9 +210,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6442172a14bc65b4cbc0ad76a2a3d7c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trail: {fileID: 6092470911752484837, guid: ad5114bb68fca994585ffbdf5f8f32fa, type: 3}
-  trailMvt: {fileID: 0}
-  currentTrail: {fileID: 0}
+  trail:
+  - {fileID: 6092470911752484837, guid: e8c67d389cb9b1f438d8e88fe2186cbc, type: 3}
+  - {fileID: 6092470911752484837, guid: ad5114bb68fca994585ffbdf5f8f32fa, type: 3}
+  - {fileID: 6092470911752484837, guid: 1a47befbbade7e8458499aa558120e64, type: 3}
+  - {fileID: 6092470911752484837, guid: 9125e9455e09f184381212be8d68ce2c, type: 3}
+  first: {fileID: 2100000, guid: d976c36b565dbe14997e539c2ff597a8, type: 2}
 --- !u!4 &546638418
 Transform:
   m_ObjectHideFlags: 0

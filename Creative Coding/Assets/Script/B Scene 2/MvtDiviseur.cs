@@ -10,8 +10,9 @@ public class MvtDiviseur : MonoBehaviour
     public GameObject trailinstan;
     private Vector3 destination;
     private ActiveComportement activeComportement;
-    private bool tryStart =true;
+    private bool tryStart = true;
     private int j = 1;
+    private int i = 1;
     void Start()
     {
         activeComportement = GetComponent<ActiveComportement>();
@@ -35,21 +36,20 @@ public class MvtDiviseur : MonoBehaviour
         {
             if (!tryStart)
             {
-
-                int i = Random.Range(0, 2);
-                i = i == 0 ? -1 : 1;
+                i = -i;
 
                 destination = transform.position + (new Vector3(0, 0, i).normalized * 5);
                 GameObject gamObject = Instantiate(trailinstan, transform.position, Quaternion.identity);
                 MvtDiviseur mLine = gamObject.GetComponent<MvtDiviseur>();
+
                 mLine.MouvementLineStart(5, -i);
                 tryStart = true;
 
             }
             else
             {
-               
-                
+
+
                 if (j % 5 == 0)
                 {
                     tryStart = false;
