@@ -8,6 +8,8 @@ public class MvtDiviseur : MonoBehaviour
     public float distanceDeplacement;
     public float divisionChange;
     public GameObject trailinstan;
+    
+    private Vector3 directionOfDeplacement;
     private Vector3 destination;
     private ActiveComportement activeComportement;
     private bool tryStart = true;
@@ -15,8 +17,10 @@ public class MvtDiviseur : MonoBehaviour
     private int i = 1;
     void Start()
     {
+       
         activeComportement = GetComponent<ActiveComportement>();
         destination = destination == Vector3.zero ? transform.position : destination;
+        directionOfDeplacement = activeComportement.directionOfDeplacement;
     }
     // Update is called once per frame
     void Update()
@@ -54,7 +58,7 @@ public class MvtDiviseur : MonoBehaviour
                 {
                     tryStart = false;
                 }
-                destination = transform.position + (new Vector3(-1, 0, 0).normalized * distanceDeplacement);
+                destination = transform.position + (directionOfDeplacement * distanceDeplacement);
                 j++;
             }
         }

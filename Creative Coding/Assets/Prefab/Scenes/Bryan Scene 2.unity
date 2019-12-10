@@ -375,6 +375,7 @@ GameObject:
   - component: {fileID: 220729320}
   - component: {fileID: 220729319}
   - component: {fileID: 220729322}
+  - component: {fileID: 220729324}
   - component: {fileID: 220729323}
   m_Layer: 0
   m_Name: CamCube
@@ -460,6 +461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myCube: {fileID: 618780462}
+  speedOfRotation: 15
 --- !u!114 &220729323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -605,6 +607,21 @@ MonoBehaviour:
   m_UiShowAnamorphicBloomScales: 0
   m_UiShowStarBloomScales: 0
   m_UiShowHeightSampling: 0
+--- !u!114 &220729324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220729318}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d66016b8d1f8144a3c9c13ad3c53f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 220729320}
+  deux: {x: 0, y: 0}
+  colorGet: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &478867026
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,7 +730,7 @@ GameObject:
   - component: {fileID: 618780464}
   - component: {fileID: 618780463}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Visual Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -785,7 +802,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 618780462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 702, y: 0, z: 603}
+  m_LocalPosition: {x: 702, y: 0, z: 602.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1066,7 +1083,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: a236212a780429949bfb2483370a772e, type: 2}
   m_TargetDisplay: 0
@@ -1086,7 +1103,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1623186457}
   m_LocalRotation: {x: 0.5000044, y: -0.4999956, z: 0.4999956, w: 0.5000044}
-  m_LocalPosition: {x: 20, y: 390, z: 2}
+  m_LocalPosition: {x: 0, y: 390, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -9,6 +9,7 @@ public class MvtCercle : MonoBehaviour
     public float rayonCircle;
     public float angleSpeed;
     public float angleToRotate;
+    
     private Vector3 destination;
     private ActiveComportement activeComportement;
 
@@ -22,6 +23,7 @@ public class MvtCercle : MonoBehaviour
 
     void Start()
     {
+        
         activeComportement = GetComponent<ActiveComportement>();
         destination = destination == Vector3.zero ? transform.position : destination;
     }

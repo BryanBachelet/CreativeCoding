@@ -6,13 +6,17 @@ public class MvtLine : MonoBehaviour
 {
     public float speed;
     public float distanceDeplacement;
+   
+    private Vector3 directionOfDeplacement;
     private Vector3 destination;
     private ActiveComportement activeComportement;
    
     void Start()
     {
+     
         activeComportement = GetComponent<ActiveComportement>();
         destination = destination== Vector3.zero ? transform.position : destination;
+        directionOfDeplacement = activeComportement.directionOfDeplacement;
     }
 
     // Update is called once per frame
@@ -31,7 +35,7 @@ public class MvtLine : MonoBehaviour
         }
         else
         {
-            destination = transform.position + (new Vector3(-1,0,0).normalized * distanceDeplacement);
+            destination = transform.position + (directionOfDeplacement.normalized * distanceDeplacement);
         }
     }
     public void MouvementLineStart(float distanceMvt, float direction)
