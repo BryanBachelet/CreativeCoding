@@ -5,37 +5,43 @@ using UnityEngine;
 public class Control : MonoBehaviour
 {
     public GameObject myCube;
+    public float speedOfRotation;
+    private float horizontalSave;
+    private
+        float verticalSave;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.RightArrow))
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+        if(horizontal> 0)
         {
-            myCube.transform.Rotate(myCube.transform.right, 15 * Time.deltaTime);
+            horizontalSave = 1;
         }
-        else
+        if(horizontal<0)
         {
-            if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                myCube.transform.Rotate(-myCube.transform.right, 15 * Time.deltaTime);
-            }
+            horizontalSave = -1;
         }
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (vertical > 0)
         {
-            myCube.transform.Rotate(myCube.transform.up, 15 * Time.deltaTime);
+            verticalSave = 1;
         }
-        else
+        if (    vertical < 0)
         {
-            if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                myCube.transform.Rotate(-myCube.transform.up, 15 * Time.deltaTime);
-            }
+            verticalSave = -1;
         }
+        myCube.transform.Rotate(Vector3.up, horizontalSave * speedOfRotation * Time.deltaTime, Space.World);
+        myCube.transform.Rotate(Vector3.right, verticalSave * speedOfRotation * Time.deltaTime, Space.World);
+
+
+
+
     }
 
 }

@@ -9,6 +9,8 @@ public class MvtDemiCercle : MonoBehaviour
     public float rayonCircle;
     public float angleSpeed;
     public float angleToRotate;
+   
+    private Vector3 directionOfDeplacement;
     private Vector3 destination;
     private ActiveComportement activeComportement;
 
@@ -24,11 +26,14 @@ public class MvtDemiCercle : MonoBehaviour
     {
         activeComportement = GetComponent<ActiveComportement>();
         destination = destination == Vector3.zero ? transform.position : destination;
+        directionOfDeplacement = activeComportement.directionOfDeplacement;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+
         if (activeComportement.isWorking)
         {
             MouvementLine();
@@ -55,7 +60,7 @@ public class MvtDemiCercle : MonoBehaviour
             {
 
                 isRotating = false;
-                destination = transform.position + (new Vector3(-1, 0, 0).normalized * (distanceDeplacement));
+                destination = transform.position + (directionOfDeplacement.normalized * (distanceDeplacement));
             }
                 if (!startRotation)
                 {
@@ -79,7 +84,7 @@ public class MvtDemiCercle : MonoBehaviour
         else
         {
        
-            destination = transform.position + (new Vector3(-1, 0, 0).normalized * (distanceDeplacement));
+            destination = transform.position + (directionOfDeplacement.normalized * (distanceDeplacement));
             direction = destination- transform.position;
             isRotating = false;
             startRotation = false;
