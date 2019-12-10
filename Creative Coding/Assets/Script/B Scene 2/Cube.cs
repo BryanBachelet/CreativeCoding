@@ -21,5 +21,9 @@ public class Cube : MonoBehaviour
         {
             other.GetComponent<TrailMouvement>().visible = false;
         }
+        if (other.GetComponent<ActiveComportement>())
+        {
+            other.GetComponent<ActiveComportement>().isWorking = false;
+        }
     }
 }

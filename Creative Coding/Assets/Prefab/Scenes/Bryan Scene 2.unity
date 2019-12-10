@@ -680,9 +680,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6442172a14bc65b4cbc0ad76a2a3d7c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trail: {fileID: 6092470911752484837, guid: 869ce7c457e3bb64aa47943053a00026, type: 3}
-  trailMvt: {fileID: 0}
-  currentTrail: {fileID: 0}
+  trail:
+  - {fileID: 6092470911752484837, guid: e8c67d389cb9b1f438d8e88fe2186cbc, type: 3}
+  - {fileID: 6092470911752484837, guid: ad5114bb68fca994585ffbdf5f8f32fa, type: 3}
+  - {fileID: 6092470911752484837, guid: 1a47befbbade7e8458499aa558120e64, type: 3}
+  - {fileID: 6092470911752484837, guid: 9125e9455e09f184381212be8d68ce2c, type: 3}
+  first: {fileID: 2100000, guid: d976c36b565dbe14997e539c2ff597a8, type: 2}
 --- !u!4 &546638418
 Transform:
   m_ObjectHideFlags: 0
@@ -1082,13 +1085,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1623186457}
-  m_LocalRotation: {x: -0.49125275, y: 0.50832415, z: -0.48537657, w: -0.5144772}
+  m_LocalRotation: {x: 0.5000044, y: -0.4999956, z: 0.4999956, w: 0.5000044}
   m_LocalPosition: {x: 20, y: 390, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: -90, z: -0.001}
 --- !u!1 &1942052472
 GameObject:
   m_ObjectHideFlags: 0
