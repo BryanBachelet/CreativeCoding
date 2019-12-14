@@ -321,7 +321,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a2f172cb81f7a294a87e2ad9451901f7, type: 2}
+  - {fileID: 2100000, guid: b00f22984d4671b4eb4d987686239949, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -521,7 +521,7 @@ MonoBehaviour:
     m_k: 0.0035169956
     m_ToeCoef: {x: 0.00007033985, y: -0.98, z: -0, w: 0.6}
     m_ShoulderCoef: {x: 0.996483, y: 0, z: -0.59788984, w: 3.4}
-  m_UseLensFlare: 0
+  m_UseLensFlare: 1
   m_FlareTreshold: 0.8
   m_FlareIntensity: 0.25
   m_FlareTint0: {r: 0.30588236, g: 0.27058825, b: 0.58431375, a: 1}
@@ -532,12 +532,12 @@ MonoBehaviour:
   m_FlareTint5: {r: 0.14117648, g: 0.2, b: 0.5529412, a: 1}
   m_FlareTint6: {r: 0.11372549, g: 0.16078432, b: 0.4117647, a: 1}
   m_FlareTint7: {r: 0.06666667, g: 0.08627451, b: 0.41960785, a: 1}
-  m_FlareScales: {x: 55.77, y: 2.5, z: 1.32, w: 1.12}
+  m_FlareScales: {x: 12, y: 2.5, z: 1.32, w: 1.12}
   m_FlareScalesNear: {x: 12, y: 7.37, z: 5.3, w: 4.14}
-  m_FlareMask: {fileID: 0}
+  m_FlareMask: {fileID: 2800000, guid: 9caff1227d841d143862adba1dc06356, type: 3}
   m_FlareRendering: 0
   m_FlareType: 1
-  m_FlareShape: {fileID: 0}
+  m_FlareShape: {fileID: 2800000, guid: bbf784a872adaba4884518c6f1d12f4a, type: 3}
   m_UseBokehFlare: 1
   m_BokehScale: 0.4
   m_BokehFlareQuality: 1
@@ -1038,6 +1038,7 @@ GameObject:
   - component: {fileID: 1623186460}
   - component: {fileID: 1623186459}
   - component: {fileID: 1623186458}
+  - component: {fileID: 1623186461}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1109,6 +1110,151 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: -90, z: -0.001}
+--- !u!114 &1623186461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623186457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c248faf0e10cd5a4cb2ca648c286bfa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SamplingMinHeight: 400
+  m_ResSamplingPixelCount:
+  - 400
+  - 577.7778
+  - 755.55554
+  - 933.3333
+  - 1111.1111
+  - 1288.8888
+  m_SamplingMode: 1
+  m_BlendMode: 0
+  m_ScreenMaxIntensity: 0
+  m_QualityPreset: 0
+  m_HDR: 0
+  m_ScreenBlendMode: 1
+  m_BloomIntensity: 1
+  m_BloomThreshhold: 0.5
+  m_BloomThreshholdColor: {r: 1, g: 1, b: 1, a: 1}
+  m_DownscaleCount: 5
+  m_IntensityManagement: 0
+  m_BloomIntensities:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  m_BloomColors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  m_BloomUsages: 0101010101010101
+  m_BloomCurve:
+    m_BlackPoint: 0
+    m_WhitePoint: 4
+    m_CrossOverPoint: 0.6
+    m_ToeStrength: 0.98
+    m_ShoulderStrength: 0
+    m_k: 0.0035169956
+    m_ToeCoef: {x: 0.00007033985, y: -0.98, z: -0, w: 0.6}
+    m_ShoulderCoef: {x: 0.996483, y: 0, z: -0.59788984, w: 3.4}
+  m_UseLensFlare: 1
+  m_FlareTreshold: 0.8
+  m_FlareIntensity: 8.224684
+  m_FlareTint0: {r: 0.30588236, g: 0.27058825, b: 0.58431375, a: 1}
+  m_FlareTint1: {r: 0.14117648, g: 0.2, b: 0.5529412, a: 1}
+  m_FlareTint2: {r: 0.11372549, g: 0.16078432, b: 0.4117647, a: 1}
+  m_FlareTint3: {r: 0.06666667, g: 0.08627451, b: 0.41960785, a: 1}
+  m_FlareTint4: {r: 0.30588236, g: 0.27058825, b: 0.58431375, a: 1}
+  m_FlareTint5: {r: 0.14117648, g: 0.2, b: 0.5529412, a: 1}
+  m_FlareTint6: {r: 0.11372549, g: 0.16078432, b: 0.4117647, a: 1}
+  m_FlareTint7: {r: 0.06666667, g: 0.08627451, b: 0.41960785, a: 1}
+  m_FlareScales: {x: 12, y: 2.5, z: 1.32, w: 1.12}
+  m_FlareScalesNear: {x: 12, y: 7.37, z: 5.3, w: 4.14}
+  m_FlareMask: {fileID: 2800000, guid: 9caff1227d841d143862adba1dc06356, type: 3}
+  m_FlareRendering: 0
+  m_FlareType: 1
+  m_FlareShape: {fileID: 2800000, guid: bbf784a872adaba4884518c6f1d12f4a, type: 3}
+  m_UseBokehFlare: 1
+  m_BokehScale: 0.4
+  m_BokehFlareQuality: 1
+  m_UseAnamorphicFlare: 0
+  m_AnamorphicFlareTreshold: 0.8
+  m_AnamorphicFlareIntensity: 1
+  m_AnamorphicDownscaleCount: 3
+  m_AnamorphicBlurPass: 2
+  m_AnamorphicBloomIntensities:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  m_AnamorphicBloomColors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  m_AnamorphicBloomUsages: 0101010101010101
+  m_AnamorphicSmallVerticalBlur: 0
+  m_AnamorphicDirection: 0
+  m_AnamorphicScale: 3
+  m_UseStarFlare: 0
+  m_StarFlareTreshol: 0.8
+  m_StarFlareIntensity: 1
+  m_StarScale: 2
+  m_StarDownscaleCount: 3
+  m_StarBlurPass: 1
+  m_StarBloomIntensities:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  m_StarBloomColors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  m_StarBloomUsages: 0101010101010101
+  m_UseLensDust: 0
+  m_DustIntensity: 1
+  m_DustTexture: {fileID: 0}
+  m_DirtLightIntensity: 5
+  m_DownsamplingQuality: 0
+  m_UpsamplingQuality: 0
+  m_TemporalStableDownsampling: 0
+  m_InvertImage: 0
+  m_DirectDownSample: 0
+  m_DirectUpsample: 0
+  m_UiShowBloomScales: 0
+  m_UiShowAnamorphicBloomScales: 0
+  m_UiShowStarBloomScales: 0
+  m_UiShowHeightSampling: 0
 --- !u!1 &1942052472
 GameObject:
   m_ObjectHideFlags: 0

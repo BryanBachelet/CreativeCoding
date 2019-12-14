@@ -8,12 +8,12 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BlendTest
-  m_Shader: {fileID: 4800000, guid: 31a0a06d5b6e050458b2bb46938baa0c, type: 3}
-  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION
+  m_Shader: {fileID: 4800000, guid: d62bc16c10ede9747bd74f35961da924, type: 3}
+  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION _ZWRITE_ON
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_DoubleSidedGI: 1
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -41,7 +41,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 8400000, guid: a236212a780429949bfb2483370a772e, type: 2}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 0, y: 0}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -56,15 +56,25 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 8400000, guid: a236212a780429949bfb2483370a772e, type: 2}
+        m_Scale: {x: 0, y: 0}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Blend: 0
+    - _Alpha: 0.31
+    - _Blend: 0.41
+    - _BlendDst: 7
+    - _BlendOp: 24
+    - _BlendSrc: 4
     - _BumpScale: 1
+    - _ColorMask: 2
+    - _CullMode: 0
     - _Cutoff: 0.5
+    - _DepthComp: 4
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
+    - _DstFactor: 3
+    - _Emission: 0
+    - _Extrude: -0.02
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -75,8 +85,16 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _SrcFactor: 4
+    - _Stencil: 4.34
+    - _StencilComp: 1
+    - _StencilOp: 1
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
     - _UVSec: 0
-    - _ZWrite: 0
+    - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Color: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 0.5647059}
     - _EmissionColor: {r: 4.594794, g: 4.594794, b: 4.594794, a: 1}
+    - _Tint1: {r: 1, g: 0, b: 0, a: 0.9372549}
+    - _Tint2: {r: 1, g: 0.9386792, b: 0.9386792, a: 0.8039216}
