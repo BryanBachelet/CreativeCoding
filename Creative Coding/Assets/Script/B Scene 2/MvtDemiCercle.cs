@@ -9,11 +9,12 @@ public class MvtDemiCercle : MonoBehaviour
     public float rayonCircle;
     public float angleSpeed;
     public float angleToRotate;
-   
+
     private Vector3 directionOfDeplacement;
     private Vector3 destination;
     private ActiveComportement activeComportement;
 
+    private float currentAngleSpeed;
     private float distance;
     private Vector3 direction;
     private bool isRotating = false;
@@ -32,7 +33,7 @@ public class MvtDemiCercle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
 
         if (activeComportement.isWorking)
         {
@@ -45,7 +46,7 @@ public class MvtDemiCercle : MonoBehaviour
         {
             distance = Vector3.Distance(transform.position, destination);
 
-            if (distance / ( distanceDeplacement) < 0.5f && angleRotated < angleToRotate)
+            if (distance / (distanceDeplacement) < 0.5f && angleRotated < angleToRotate)
             {
                 isRotating = true;
             }
@@ -56,12 +57,12 @@ public class MvtDemiCercle : MonoBehaviour
 
             if (isRotating)
             {
-            if (angleRotated > angleToRotate)
-            {
+                if (angleRotated >= angleToRotate)
+                {
 
-                isRotating = false;
-                destination = transform.position + (directionOfDeplacement.normalized * (distanceDeplacement));
-            }
+                    isRotating = false;
+                    destination = transform.position + (directionOfDeplacement.normalized * (distanceDeplacement));
+                }
                 if (!startRotation)
                 {
                     startPosRotation = transform.position;
@@ -69,12 +70,26 @@ public class MvtDemiCercle : MonoBehaviour
                     startRotation = true;
                 }
 
-
+                float nextAngleRotated = angleRotated;
+                nextAngleRotated += angleSpeed * Time.deltaTime;
+                if (nextAngleRotated > angleToRotate)
+                {
+                    float frameTime = Time.deltaTime;
+                    currentAngleSpeed = ((angleToRotate- angleRotated));
+                    currentAngleSpeed/= frameTime;
+                    Debug.Log("Speed = " + currentAngleSpeed);
+                    angleRotated += currentAngleSpeed * Time.deltaTime;
+                }
+                else
+                {
+                    currentAngleSpeed = angleSpeed  ;
+                    angleRotated += currentAngleSpeed * Time.deltaTime;
+                }
                 if (angleRotated < angleToRotate)
                 {
-                    transform.RotateAround(startPosRotation + direction.normalized * rayonCircle, transform.up, angleSpeed * Time.deltaTime);
+
+                    transform.RotateAround(startPosRotation + direction.normalized * rayonCircle, transform.up, currentAngleSpeed *Time.deltaTime);
                     transform.eulerAngles = startRot;
-                    angleRotated += angleSpeed * Time.deltaTime;
 
                 }
             }
@@ -83,9 +98,9 @@ public class MvtDemiCercle : MonoBehaviour
         }
         else
         {
-       
+
             destination = transform.position + (directionOfDeplacement.normalized * (distanceDeplacement));
-            direction = destination- transform.position;
+            direction = destination - transform.position;
             isRotating = false;
             startRotation = false;
             angleRotated = 0;

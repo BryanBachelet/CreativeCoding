@@ -69,11 +69,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6664525481731992076}
     m_Modifications:
-    - target: {fileID: 6092470911752484837, guid: e8c67d389cb9b1f438d8e88fe2186cbc,
-        type: 3}
-      propertyPath: m_Name
-      value: Trail Demi Cercle
-      objectReference: {fileID: 0}
     - target: {fileID: 6092470911752484839, guid: e8c67d389cb9b1f438d8e88fe2186cbc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -128,6 +123,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6092470911752484837, guid: e8c67d389cb9b1f438d8e88fe2186cbc,
+        type: 3}
+      propertyPath: m_Name
+      value: Trail Demi Cercle
+      objectReference: {fileID: 0}
+    - target: {fileID: 114297594703591966, guid: e8c67d389cb9b1f438d8e88fe2186cbc,
+        type: 3}
+      propertyPath: angleSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114297594703591966, guid: e8c67d389cb9b1f438d8e88fe2186cbc,
+        type: 3}
+      propertyPath: speed
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8c67d389cb9b1f438d8e88fe2186cbc, type: 3}
