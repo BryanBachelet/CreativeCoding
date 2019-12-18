@@ -6,7 +6,7 @@ public class ManagerScript : MonoBehaviour
 {
     public GameObject[] trail;
     private TrailMouvement trailMvt;
-    private GameObject currentTrail;
+    public GameObject currentTrail;
     int i = 0;
     int j = 0;
     private ActiveComportement activeComportement;
@@ -17,10 +17,11 @@ public class ManagerScript : MonoBehaviour
         Vector3 pos = StartPos();
         int i = Random.Range(0, trail.Length);
         currentTrail = Instantiate(trail[i], Vector3.up + pos, Quaternion.identity);
+        currentTrail = currentTrail.GetComponent<InfoTrail>().trail;
         GetMaterial(currentTrail);
         activeComportement = currentTrail.GetComponent<ActiveComportement>();
         activeComportement.j = j;
-       
+
     }
 
     // Update is called once per frame
@@ -30,12 +31,13 @@ public class ManagerScript : MonoBehaviour
         {
             Vector3 pos = StartPos();
             int i = Random.Range(0, trail.Length);
-            currentTrail = Instantiate(trail[i], Vector3.up +pos, Quaternion.identity);
+            currentTrail = Instantiate(trail[i], Vector3.up + pos, Quaternion.identity);
+            currentTrail = currentTrail.GetComponent<InfoTrail>().trail;
             GetMaterial(currentTrail);
-            
+
             activeComportement = currentTrail.GetComponent<ActiveComportement>();
             activeComportement.j = j;
-           
+
 
 
         }
