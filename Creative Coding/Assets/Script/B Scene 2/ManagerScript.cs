@@ -61,19 +61,19 @@ public class ManagerScript : MonoBehaviour
         j = Random.Range(0, 4);
         if (j == 0)
         {
-            pos = new Vector3(-300, 0, Random.Range(-200, 200));
+            pos = new Vector3(-200, 0, Random.Range(-200, 200));
         }
         if (j == 1)
         {
-            pos = new Vector3(300, 0, Random.Range(-200, 200));
+            pos = new Vector3(200, 0, Random.Range(-200, 200));
         }
         if (j == 2)
         {
-            pos = new Vector3(Random.Range(-200, 200), 0, -300);
+            pos = new Vector3(Random.Range(-200, 200), 0, -200);
         }
         if (j == 3)
         {
-            pos = new Vector3(Random.Range(-200, 200), 0, 300);
+            pos = new Vector3(Random.Range(-200, 200), 0, 200);
         }
 
         return pos;
