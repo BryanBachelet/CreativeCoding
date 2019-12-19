@@ -17,6 +17,7 @@ public class MvtLine : MonoBehaviour
         activeComportement = GetComponent<ActiveComportement>();
         destination = destination== Vector3.zero ? transform.position : destination;
         directionOfDeplacement = activeComportement.directionOfDeplacement;
+      
     }
 
     // Update is called once per frame

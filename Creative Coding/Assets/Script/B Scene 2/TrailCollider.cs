@@ -53,17 +53,13 @@ public class TrailCollider : MonoBehaviour
                 if (currentVerticeNumber != 0)
                 {
                     float angleDir = Vector3.Angle(previousDirection.normalized, direction.normalized);
-                    if (angleDir < 20)
+                    if (angleDir < 5)
                     {
                         direction = vertices[currentVerticeNumber + 1] - vertices[previousVertex];
                         distance = Vector3.Distance(vertices[previousVertex], vertices[currentVerticeNumber + 1]);
                        
                         angle = Vector3.SignedAngle(previousCollider.transform.forward, direction.normalized, Vector3.up);
-                        Debug.Log(angle);
-                        Debug.DrawRay(vertices[currentVerticeNumber], direction * 10, Color.magenta);
-                        Debug.DrawLine(vertices[currentVerticeNumber], vertices[currentVerticeNumber] + Vector3.up * 10);
-                        Debug.DrawLine(vertices[currentVerticeNumber + 1], vertices[currentVerticeNumber + 1] + Vector3.up * 10);
-                       // Debug.Break();
+                      
                         previousCollider.transform.position = transform.TransformVector(vertices[previousVertex] + direction.normalized * distance / 2);
 
                         previousCollider.transform.eulerAngles += new Vector3(0, angle, 0);
@@ -92,7 +88,7 @@ public class TrailCollider : MonoBehaviour
     public void SpawnCollider(Vector3[] vertices, float distance, Vector3 direction, float angle)
     {
         GameObject collider = Instantiate(boxCollider, transform.TransformVector(vertices[currentVerticeNumber] + direction.normalized * distance / 2), Quaternion.identity, transform.parent);
-
+        collider.GetComponent<CollisionBetweenTrail>().trail = gameObject;
         BoxCollider box = collider.GetComponent<BoxCollider>();
         box.size = new Vector3(1, 1, distance);
         angle = Vector3.SignedAngle(collider.transform.forward, direction.normalized, Vector3.up);
