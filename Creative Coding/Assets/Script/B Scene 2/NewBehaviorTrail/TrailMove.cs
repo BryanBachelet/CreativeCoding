@@ -76,7 +76,7 @@ public class TrailMove : MonoBehaviour
             {
                 ChangeDirection();
             }
-            Destination(distanceOfMouvement);
+            Destination(distanceOfMouvement*5);
             getDestination = true;
         }
 

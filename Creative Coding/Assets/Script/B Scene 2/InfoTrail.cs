@@ -18,14 +18,7 @@ public class InfoTrail : MonoBehaviour
     {
         if (!activeComportement.isWorking)
         {
-            if (compteur > time)
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
-                compteur += Time.deltaTime;
-            }
+            gameObject.isStatic = true;
         }
     }
 }

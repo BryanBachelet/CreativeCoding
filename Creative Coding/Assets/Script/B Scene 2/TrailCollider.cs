@@ -31,8 +31,10 @@ public class TrailCollider : MonoBehaviour
 
     void Update()
     {
-
-        SetCollider();
+        if (active.isWorking)
+        {
+            SetCollider();
+        }
     }
 
     public void SetCollider()
@@ -53,7 +55,7 @@ public class TrailCollider : MonoBehaviour
                 if (currentVerticeNumber != 0)
                 {
                     float angleDir = Vector3.Angle(previousDirection.normalized, direction.normalized);
-                    if (angleDir < 5)
+                    if (angleDir <10f)
                     {
                         direction = vertices[currentVerticeNumber + 1] - vertices[previousVertex];
                         distance = Vector3.Distance(vertices[previousVertex], vertices[currentVerticeNumber + 1]);

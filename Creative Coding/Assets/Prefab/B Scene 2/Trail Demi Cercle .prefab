@@ -108,6 +108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trail: {fileID: 2620219428109220462}
+  time: 35
+  activeComportement: {fileID: 0}
 --- !u!1001 &8129047544789388683
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -193,7 +195,7 @@ PrefabInstance:
     - target: {fileID: 6092470911752484838, guid: e8c67d389cb9b1f438d8e88fe2186cbc,
         type: 3}
       propertyPath: m_Time
-      value: 10
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 6092470911752484838, guid: e8c67d389cb9b1f438d8e88fe2186cbc,
         type: 3}

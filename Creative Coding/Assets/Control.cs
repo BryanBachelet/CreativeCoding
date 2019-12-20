@@ -20,6 +20,10 @@ public class Control : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            verticalSave = 0; horizontalSave = 0;
+        }
         if(horizontal> 0)
         {
             horizontalSave = 1;
@@ -32,13 +36,12 @@ public class Control : MonoBehaviour
         {
             verticalSave = 1;
         }
-        if (    vertical < 0)
+        if (vertical < 0)
         {
             verticalSave = -1;
         }
         myCube.transform.Rotate(Vector3.up, horizontalSave * speedOfRotation * Time.deltaTime, Space.World);
         myCube.transform.Rotate(Vector3.right, verticalSave * speedOfRotation * Time.deltaTime, Space.World);
-
 
 
 

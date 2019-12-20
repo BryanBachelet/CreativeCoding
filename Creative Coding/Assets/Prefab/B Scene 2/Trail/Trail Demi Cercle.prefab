@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 65202370031205378}
   - component: {fileID: 3993680564704944592}
   - component: {fileID: 114297594703591966}
-  m_Layer: 0
-  m_Name: Trail Simple 1
+  m_Layer: 11
+  m_Name: Trail Demi Cercle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,6 +155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isWorking: 1
+  j: 0
+  directionOfDeplacement: {x: 0, y: 0, z: 0}
 --- !u!114 &114297594703591966
 MonoBehaviour:
   m_ObjectHideFlags: 0
