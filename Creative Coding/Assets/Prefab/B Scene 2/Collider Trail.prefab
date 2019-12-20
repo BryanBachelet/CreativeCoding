@@ -58,4 +58,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trail: {fileID: 0}
+  particule: {fileID: 292643745179613973, guid: 6e53cc8662d6c3544a7fc9a09153adf6,
+    type: 3}
   add: 0

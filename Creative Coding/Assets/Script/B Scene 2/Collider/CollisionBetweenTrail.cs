@@ -5,6 +5,7 @@ using UnityEngine;
 public class CollisionBetweenTrail : MonoBehaviour
 {
     public GameObject trail;
+    public GameObject particule;
 
     private TrailMove trailBehavior;
     private ManagerTrailBehavior manager;
@@ -17,7 +18,13 @@ public class CollisionBetweenTrail : MonoBehaviour
     {
         if (other.tag == "Trail")
         {
-            
+            if (trail == null || other.gameObject == trail)
+            {
+                Instantiate(particule, other.transform.position, Quaternion.identity);
+            }
+
+            trail = other.gameObject;
+
             if (other.transform.parent != transform.parent)
             {
                
