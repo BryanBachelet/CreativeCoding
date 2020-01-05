@@ -30,7 +30,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   getDestination: 0
   speedForward: 100
-  distanceOfMouvement: 20
+  distanceOfMouvement: 10
   angularSpeed: 180
   rotateProprios: []
 --- !u!114 &4709373359086963982
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beheviorLine: 0000000002000000
+  currentMove: 0
 --- !u!114 &7011466330991500572
 MonoBehaviour:
   m_ObjectHideFlags: 0

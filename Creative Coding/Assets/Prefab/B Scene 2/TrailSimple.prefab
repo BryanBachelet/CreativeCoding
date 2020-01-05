@@ -47,6 +47,10 @@ MonoBehaviour:
   trail: {fileID: 2109101467239764828}
   time: 35
   activeComportement: {fileID: 0}
+  fin: 0
+  material: {fileID: 0}
+  color: {r: 0, g: 0, b: 0, a: 0}
+  t: 0
 --- !u!54 &5243200866917902388
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -77,7 +81,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   getDestination: 0
   speedForward: 100
-  distanceOfMouvement: 30
+  distanceOfMouvement: 10
   angularSpeed: 360
   rotateProprios: []
 --- !u!114 &6733356462422978904
@@ -93,6 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beheviorLine: 00000000
+  currentMove: 0
+  hitGameObject: []
 --- !u!1001 &5316999225408283833
 PrefabInstance:
   m_ObjectHideFlags: 0

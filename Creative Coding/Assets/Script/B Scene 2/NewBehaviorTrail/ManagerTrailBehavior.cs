@@ -5,9 +5,10 @@ using UnityEngine;
 public class ManagerTrailBehavior : MonoBehaviour
 {
     public List<int> beheviorLine;
-    private int currentMove;
+    public int currentMove;
     private TrailMove trailMove;
     private ActiveComportement active;
+    public List<GameObject> hitGameObject;
     void Start()
     {
         trailMove = GetComponent<TrailMove>();
@@ -42,7 +43,7 @@ public class ManagerTrailBehavior : MonoBehaviour
 
                     if (!trailMove.Line())
                     {
-                        currentMove = Random.Range(0, beheviorLine.Count);
+                        IncreaseManager();
 
                     }
 
@@ -51,7 +52,7 @@ public class ManagerTrailBehavior : MonoBehaviour
 
                     if (!trailMove.LineRotate())
                     {
-                        currentMove = Random.Range(0, beheviorLine.Count);
+                        IncreaseManager();
 
                     }
                     break;
@@ -59,7 +60,7 @@ public class ManagerTrailBehavior : MonoBehaviour
                     int j = CheckRotation(currentMove);
                     if (!trailMove.Rotate(j))
                     {
-                        currentMove = Random.Range(0, beheviorLine.Count);
+                        IncreaseManager();
 
                     }
                     break;
@@ -68,6 +69,20 @@ public class ManagerTrailBehavior : MonoBehaviour
         }
         
     }
+
+
+   public void IncreaseManager()
+    {
+        if(currentMove >= beheviorLine.Count - 1)
+        {
+            currentMove = 0;
+        }
+        else
+        {
+            currentMove++;
+        }
+    }
+
 
   public  int CheckRotation( int currrent)
     {

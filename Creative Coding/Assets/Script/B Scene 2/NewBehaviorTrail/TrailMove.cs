@@ -35,7 +35,7 @@ public class TrailMove : MonoBehaviour
     {
         RotateProprio rotates = new RotateProprio();
         rotates.angleToRotate = Random.Range(90, 360);
-        rotates.radius = Random.Range(1, 100f);
+        rotates.radius = Random.Range(10, 50f);
         rotateProprios.Add(rotates);
     }
 
@@ -136,7 +136,7 @@ public class TrailMove : MonoBehaviour
             {
                 //transform.position = (startPos + directionOfDeplacement.normalized * radius) +  Quaternion.Euler(0, angleToRotate, 0) * startPos;
                 transform.eulerAngles = startRot;
-                Destination(distanceOfMouvement / 2);
+                Destination(distanceOfMouvement);
                 inRotate = false;
             }
             return true;
