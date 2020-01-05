@@ -66,7 +66,7 @@ public class TrailCollider : MonoBehaviour
 
                         previousCollider.transform.eulerAngles += new Vector3(0, angle, 0);
                         BoxCollider box = previousCollider.GetComponent<BoxCollider>();
-                        box.size = new Vector3(1, 1, distance);
+                        box.size = new Vector3(2, 2, distance);
 
                         previousDirection = direction;
                         currentVerticeNumber++;

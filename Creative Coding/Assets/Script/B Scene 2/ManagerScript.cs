@@ -56,7 +56,7 @@ public class ManagerScript : MonoBehaviour
         {
             GameObject trail = ActiveTrail[lastTrailAdd];
             ActiveTrail.RemoveAt(lastTrailAdd);
-            Destroy(trail);
+            trail.GetComponent<InfoTrail>().fin = true;
             ActiveTrail.Insert(lastTrailAdd, trailToAdd);
 
             lastTrailAdd = Count(lastTrailAdd);

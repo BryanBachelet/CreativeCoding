@@ -31,7 +31,7 @@ MonoBehaviour:
   getDestination: 0
   speedForward: 100
   distanceOfMouvement: 20
-  angularSpeed: 360
+  angularSpeed: 180
   rotateProprios: []
 --- !u!114 &4709373359086963982
 MonoBehaviour:
@@ -110,6 +110,10 @@ MonoBehaviour:
   trail: {fileID: 2303426146314174280}
   time: 35
   activeComportement: {fileID: 0}
+  fin: 0
+  material: {fileID: 0}
+  color: {r: 0, g: 0, b: 0, a: 0}
+  t: 0
 --- !u!1001 &5439125570829879469
 PrefabInstance:
   m_ObjectHideFlags: 0
