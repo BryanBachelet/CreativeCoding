@@ -43,11 +43,7 @@ public class CollisionBetweenTrail : MonoBehaviour
 
                 if (add)
                 {
-                    if (other.gameObject != trail)
-                    {
-                        Instantiate(particule, other.transform.position, Quaternion.identity);
-                    }
-
+                   
 
                     managerTrailBehaviorOther.hitGameObject.Add(trail);
                     for (int i = 0; i < manager.beheviorLine.Count; i++)
@@ -59,7 +55,7 @@ public class CollisionBetweenTrail : MonoBehaviour
                             moveOther.rotateProprios.Add(trailBehavior.rotateProprios[j]);
                             managerTrailBehaviorOther.beheviorLine.Add(manager.beheviorLine[i]);
                         }
-                        if (manager.beheviorLine[i] < 2)
+                        if (manager.beheviorLine[i] < 2 || manager.beheviorLine[i]>2)
                         {
                             managerTrailBehaviorOther.beheviorLine.Add(manager.beheviorLine[i]);
 

@@ -64,6 +64,15 @@ public class ManagerTrailBehavior : MonoBehaviour
 
                     }
                     break;
+                case 3:
+
+                    if (!trailMove.ZigZagLine())
+                    {
+                        IncreaseManager();
+
+                    }
+                    break;
+               
             }
 
         }

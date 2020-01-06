@@ -5,6 +5,7 @@ using UnityEngine;
 public class ManagerScript : MonoBehaviour
 {
     public GameObject[] trail;
+    public GameObject neutralTrail;
     private TrailMouvement trailMvt;
     public GameObject currentTrail;
     public List<GameObject> ActiveTrail;
@@ -14,12 +15,14 @@ public class ManagerScript : MonoBehaviour
     int j = 0;
     private ActiveComportement activeComportement;
     public Material first;
+    public bool horizontal;
     // Start is called before the first frame update
     void Start()
     {
         Vector3 pos = StartPos();
         int i = Random.Range(0, trail.Length);
-        currentTrail = Instantiate(trail[i], Vector3.up + pos, Quaternion.identity);
+        currentTrail = Instantiate(neutralTrail, Vector3.up + pos, Quaternion.identity);
+        RandomizeCurrentTrail(currentTrail);
         RetainsTrail(currentTrail);
         currentTrail = currentTrail.GetComponent<InfoTrail>().trail;
         GetMaterial(currentTrail);
@@ -35,20 +38,36 @@ public class ManagerScript : MonoBehaviour
         {
             Vector3 pos = StartPos();
             int i = Random.Range(0, trail.Length);
-            currentTrail = Instantiate(trail[i], Vector3.up + pos, Quaternion.identity);
+            currentTrail = Instantiate(neutralTrail, Vector3.up + pos, Quaternion.identity);
+            RandomizeCurrentTrail(currentTrail);
             RetainsTrail(currentTrail);
             currentTrail = currentTrail.GetComponent<InfoTrail>().trail;
             GetMaterial(currentTrail);
 
             activeComportement = currentTrail.GetComponent<ActiveComportement>();
-            activeComportement.j = j;
-
-
-
+            if (horizontal)
+            {
+                activeComportement.j = 2 + j;
+            }
+            else
+            {
+                activeComportement.j = j;
+            }
         }
-
     }
 
+
+    private void RandomizeCurrentTrail( GameObject trail)
+    {
+      
+        ManagerTrailBehavior managerTrail = trail.GetComponentInChildren<ManagerTrailBehavior>();
+        for (int i = 0; i < 3; i++)
+        {
+            managerTrail.beheviorLine.Add((int)Random.Range(0, 4));
+        }
+
+
+    }
 
     private void RetainsTrail(GameObject trailToAdd)
     {
@@ -99,22 +118,30 @@ public class ManagerScript : MonoBehaviour
     {
         Vector3 pos = new Vector3(0, 0, 0);
 
-        j = Random.Range(0, 4);
-        if (j == 0)
+        j = Random.Range(0, 2);
+        if (horizontal)
         {
-            pos = new Vector3(-200, 0, Random.Range(-200, 200));
+            if (j == 0)
+            {
+                pos = new Vector3(-200, 0, Random.Range(-200, 200));
+            }
+            if (j == 1)
+            {
+                pos = new Vector3(200, 0, Random.Range(-200, 200));
+            }
+            horizontal = false;
         }
-        if (j == 1)
+        else
         {
-            pos = new Vector3(200, 0, Random.Range(-200, 200));
-        }
-        if (j == 2)
-        {
-            pos = new Vector3(Random.Range(-200, 200), 0, -200);
-        }
-        if (j == 3)
-        {
-            pos = new Vector3(Random.Range(-200, 200), 0, 200);
+            horizontal = true;
+            if (j == 0)
+            {
+                pos = new Vector3(Random.Range(-200, 200), 0, -200);
+            }
+            if (j == 1)
+            {
+                pos = new Vector3(Random.Range(-200, 200), 0, 200);
+            }
         }
 
         return pos;

@@ -12,10 +12,13 @@ GameObject:
   - component: {fileID: 6092470911752484838}
   - component: {fileID: 65202370031205378}
   - component: {fileID: 3993680564704944592}
-  - component: {fileID: 114935846442373276}
+  - component: {fileID: 4163898495133543146}
+  - component: {fileID: 3485760402110620749}
+  - component: {fileID: 4709373359086963982}
+  - component: {fileID: 7011466330991500572}
   m_Layer: 11
   m_Name: Trail Cercle
-  m_TagString: Untagged
+  m_TagString: Trail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +75,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 1000
+  m_Time: 60
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -127,7 +130,7 @@ TrailRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MinVertexDistance: 0.01
-  m_Autodestruct: 1
+  m_Autodestruct: 0
   m_Emitting: 1
 --- !u!65 &65202370031205378
 BoxCollider:
@@ -157,7 +160,23 @@ MonoBehaviour:
   isWorking: 1
   j: 0
   directionOfDeplacement: {x: 0, y: 0, z: 0}
---- !u!114 &114935846442373276
+--- !u!54 &4163898495133543146
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6092470911752484837}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &3485760402110620749
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,11 +185,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 6092470911752484837}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68fb950ce81e35148a2333d4e490f06f, type: 3}
+  m_Script: {fileID: 11500000, guid: 6dd5a292dfc841f458bd67ae5b7caed1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 200
-  distanceDeplacement: 10
-  rayonCircle: 5
-  angleSpeed: 1000
-  angleToRotate: 540
+  getDestination: 0
+  speedForward: 100
+  distanceOfMouvement: 10
+  angularSpeed: 180
+  rotateProprios: []
+--- !u!114 &4709373359086963982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6092470911752484837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 218cbc6d0df73064a96dfe0517f03884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beheviorLine: 0000000002000000
+  currentMove: 0
+  hitGameObject: []
+--- !u!114 &7011466330991500572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6092470911752484837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec632a3dfd6b4894582361297f5f6887, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxCollider: {fileID: 4819495382796707609, guid: 65aae53a2d036e2408d185bab3d88346,
+    type: 3}
+  directionDiff: 0
+  currentVerticeNumber: 0
+  countVertices: 0

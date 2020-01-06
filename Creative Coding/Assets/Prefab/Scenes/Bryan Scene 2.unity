@@ -351,11 +351,14 @@ MonoBehaviour:
   - {fileID: 1337165549278663965, guid: 235de9428eb5e9242b2c4ee10e8e0baf, type: 3}
   - {fileID: 5864048542975378378, guid: be67d1c0e13a150459a6667e4c45c3fd, type: 3}
   - {fileID: 8417458589973939203, guid: 1830ffbf1451fd44aa6d30cf90ebfff1, type: 3}
+  neutralTrail: {fileID: 2651266834965678930, guid: b4b5e50acc648a84caf7d423f975181f,
+    type: 3}
   currentTrail: {fileID: 0}
   ActiveTrail: []
   lastTrailAdd: 0
   limitTrail: 5
   first: {fileID: 2100000, guid: d976c36b565dbe14997e539c2ff597a8, type: 2}
+  horizontal: 0
 --- !u!4 &546638418
 Transform:
   m_ObjectHideFlags: 0
